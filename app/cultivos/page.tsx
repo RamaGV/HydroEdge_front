@@ -26,6 +26,7 @@ interface CultivosData {
 }
 
 export default function CultivosPage() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [cultivos, setCultivos] = useState<CultivosData[]>([]);
   const { cultivoId, setCultivoId } = useCultivo();
   const router = useRouter();
@@ -47,6 +48,7 @@ export default function CultivosPage() {
         }));
 
         setCultivos(cultivosConImagen);
+        setIsLoading(false);
       } catch (error) {
         console.error('Error al obtener los datos de los cultivos:', error);
       }
@@ -61,9 +63,21 @@ export default function CultivosPage() {
     router.push('/dashboard');
   };
   
+  if (isLoading) {
+    return (
+      <div className={`${isDarkMode ? 'dark' : 'light'}`}>
+        <div className="min-h-screen p-4 pt-16 text-text mb-12
+        bg-background dark:bg-background-dark dark:text-text-dark select-none">
+          <div className="text-center mt-24">Cargando...</div>
+          </div>
+      </div>
+    );
+  }
+  
   return (
-    <div className={`${isDarkMode ? 'dark' : ''}`}>
-      <div className="min-h-screen p-4 pt-16 text-text bg-background dark:bg-background-dark dark:text-text-dark select-none">
+    <div className={`${isDarkMode ? 'dark' : 'light'}`}>
+      <div className="min-h-screen p-4 pt-16 text-text
+        bg-background dark:bg-background-dark dark:text-text-dark select-none">
         <main className="flex-grow px-2 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {cultivos.map((cultivo) => (

@@ -21,7 +21,7 @@ const GrowthProgress: React.FC<GrowthProgressProps> = ({ daysPassed, totalDays }
   }
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-800 p-6">
+    <div className="flex flex-col items-center dark:bg-gray-800 p-2">
       <div className="w-32 h-32 mb-4">
         <CircularProgressbar
           value={percentage}

@@ -10,7 +10,6 @@ export default function Footer() {
   const { isDarkMode } = useTheme()
   
   return (
-    <div className={`${isDarkMode ? 'dark' : 'light'}`}>
       <footer className="fixed bottom-0 left-0 right-0 h-16
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
@@ -23,7 +22,6 @@ export default function Footer() {
           <NavItem icon={<Settings className="w-6 h-6" />} name="settings" activeNav={activeNav} setActiveNav={setActiveNav} />
         </div>
       </footer>
-    </div>
   )
 }
 

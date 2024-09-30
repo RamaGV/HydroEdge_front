@@ -51,11 +51,12 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara frontal */}
-            <div className="flex flex-col items-center justify-between
-              bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-md"
+            <div className="flex flex-col items-center justify-between text-center
+              bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-xl"
               style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara frontal */}
-                <div>
+              <div className='flex flex-col items-center justify-between w-full h-full'>
+                <div className="relative w-full h-1/2">
                   <CircularProgressbar
                     value={percentage}
                     maxValue={100}
@@ -68,9 +69,10 @@ const SensorCard: React.FC<SensorProps> = ({
                     })}
                     circleRatio={0.75}
                   />
-                <p className="font-semibold text-gray-800 dark:text-gray-200 pt-2"> {medida_actual} {unit} </p>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 pt-2">{label}</p>
+              <p className="font-semibold text-gray-800 dark:text-gray-200"> {medida_actual} {unit} </p>
+              <p className="text-xs text-gray-600 dark:text-gray-400 pt-2">{label}</p>
+            </div>
             </div>
           </motion.div>
         ) : (
@@ -83,16 +85,16 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara trasera */}
-            <div className="bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+            <div className="bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden"
               style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara trasera */}
-
+              
               <div className='flex flex-col items-center justify-between w-full h-full'>
                 <div className="relative w-full h-1/2">
                   <Image src="/planta_1.png" alt={label} layout="fill" objectFit="cover"/>
                 </div>
-                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">{modelo}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 pb-2">{fabricante}</p>
+                <p className="font-semibold text-gray-800 dark:text-gray-200">{modelo}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 pb-2">{fabricante}</p>
               </div>
             </div>
           </motion.div>

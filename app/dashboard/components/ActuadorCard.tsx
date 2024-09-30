@@ -16,11 +16,11 @@ export default function ActuadorCard({ icon, label, is_active }: ActuadorCardPro
   const clonedIcon = React.createElement(icon.type, { className: 'w-8 h-8 text-[#00C853]' }, icon.props.children);
   
   return (
-    <div className="flex flex-col items-center p-4 rounded-lg shadow-md justify-between
-      bg-gray-100 dark:bg-gray-700 
+    <div className="flex flex-col items-center p-4 rounded-lg 
+      shadow-xl justify-between bg-gray-100 dark:bg-gray-700 
       hover:shadow-md transition"
-      style={{ height: '100%', width: '100%' }}>
-      <div className="bg-primary rounded-full p-3 mb-2 text-white">
+      style={{ height: '180px', width: '90px' }}>
+      <div className="bg-primary rounded-full p-3 mb-2 text-white shadow-md">
         {React.cloneElement(icon as React.ReactElement, { className: 'w-8 h-8' })}
       </div>
       <span className="text-sm  text-gray-800 dark:text-gray-200">{label}</span>
@@ -31,3 +31,4 @@ export default function ActuadorCard({ icon, label, is_active }: ActuadorCardPro
     </div>
   );
 }
+2
