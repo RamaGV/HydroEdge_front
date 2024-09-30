@@ -2,21 +2,19 @@
 
 'use client';
 
-import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 import { useCultivo } from '@/contexts/CultivoContext';
 import { useUser } from '@/contexts/UserContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import { SiNotion } from 'react-icons/si';
 
-import WidgetHome from './home/components/WidgetHome';
+import WidgetHome from '@/components/WidgetHome';
 import { getWidgets } from '@/components/widgetsData';
 import TipWidget from '@/components/TipWidget';
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
   const { cultivoId } = useCultivo();
   const user = useUser();
@@ -66,10 +64,10 @@ export default function HomePage() {
 
             {/* Imagen en la parte inferior */}
             <div className='flex flex-col items-center mt-8'>
-              <h2 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
+              <h2 className='font-semibold text-gray-800 dark:text-gray-200 mb-6'>
                 Desarrollado para automatizar y optimizar cultivos, HydroEdge está diseñado para el futuro.
               </h2>
-              <div className="flex space-x-4 mt-16">
+              <div className="flex space-x-6 mb-20">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white" size={24} />
                 </a>
@@ -82,14 +80,6 @@ export default function HomePage() {
                 <a href="https://notion.so" target="_blank" rel="noopener noreferrer">
                   <SiNotion className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white" size={24} />
                 </a>
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 mb-8">
-                <img
-                  src="image_footer.png"
-                  alt="Hojas decorativas"
-                  className="w-full"
-                />
               </div>
             </div>
           </main>

@@ -71,7 +71,7 @@ const DashboardPage = () => {
     const fetchData = async () => {
       try {
         // Obtener todos los cultivos
-        const responseCultivos = await fetch('http://192.168.1.5:5000/api/cultivos/all');
+        const responseCultivos = await fetch('https://hydroedgeback-production.up.railway.app/api/cultivos/all');
         const cultivos: CultivoData[] = await responseCultivos.json();
 
         // Seleccionar el cultivo correspondiente al cultivoId del contexto
@@ -96,12 +96,12 @@ const DashboardPage = () => {
         }
 
         // Obtener datos de sensores
-        const responseSensores = await fetch('http://192.168.1.5:5000/api/sensores/all');
+        const responseSensores = await fetch('https://hydroedgeback-production.up.railway.app/api/sensores/all');
         const sensores: SensorData[] = await responseSensores.json();
         setSensoresData(sensores);
         
         // Obtener datos de actuadores
-        const responseActuadores = await fetch('http://192.168.1.5:5000/api/actuadores/all');
+        const responseActuadores = await fetch('https://hydroedgeback-production.up.railway.app/api/actuadores/all');
         const actuadores: ActuadorData[] = await responseActuadores.json();
         setActuadorData(actuadores);
         
@@ -138,12 +138,12 @@ const DashboardPage = () => {
               .map((actuador) => (
                 <ActuadorCard
                   key={actuador._id}
-                  icon={
+                  icon={  
                     actuador.nombre === 'Res. Agua' ? (
                       <Droplet />
                     ) : actuador.nombre === 'Peltier' ? (
                       <Thermometer />
-                    ) : actuador.nombre === 'Humidificador' ? (
+                    ) : actuador.nombre === 'Humid.' ? (
                       <CloudRain />
                     ) : actuador.nombre === 'AC Calor' ? (
                       <Sun />
@@ -190,7 +190,7 @@ const DashboardPage = () => {
               ))}
           </div>
         </section>
-
+        
         {/* Sección de Progreso del Cultivo */}
         <section className="bg-complementary p-4 mb-6 mt-6
           light:bg-background-light

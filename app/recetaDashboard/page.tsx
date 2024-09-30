@@ -53,7 +53,7 @@ const UpcomingEvents = () => {
   useEffect(() => {
     const fetchRecetas = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/recetas/all');
+        const response = await fetch('https://hydroedgeback-production.up.railway.app/api/recetas/all');
         const data: RecetaData[] = await response.json();
         setRecetas(data);
         if (data.length > 0) {

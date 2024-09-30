@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import { motion, AnimatePresence } from 'framer-motion';
 import 'react-circular-progressbar/dist/styles.css';
+import Image from 'next/image';
 
 interface SensorProps {
   medida_actual: number;
@@ -38,7 +40,7 @@ const SensorCard: React.FC<SensorProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center  perspective" onClick={handleCardClick}>
+    <div className="flex flex-col items-center perspective" onClick={handleCardClick}>
         {!isFlipped ? (
           <motion.div
             key="front"
@@ -49,26 +51,26 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara frontal */}
-            <div className="flex flex-col items-center bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-md">
+            <div className="flex flex-col items-center justify-between
+              bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-md"
+              style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara frontal */}
-              <div className="w-24 h-24 mb-2">
-                <CircularProgressbar
-                  value={percentage}
-                  maxValue={100}
-                  styles={buildStyles({
-                    rotation: 0.75,
-                    strokeLinecap: 'round',
-                    trailColor: '#e0e0e0',
-                    pathColor: pathColor,
-                    textColor: '#000',
-                  })}
-                  circleRatio={0.75}
-                />
+                <div>
+                  <CircularProgressbar
+                    value={percentage}
+                    maxValue={100}
+                    styles={buildStyles({
+                      rotation: 0.75,
+                      strokeLinecap: 'round',
+                      trailColor: '#e0e0e0',
+                      pathColor: pathColor,
+                      textColor: '#000',
+                    })}
+                    circleRatio={0.75}
+                  />
+                <p className="font-semibold text-gray-800 dark:text-gray-200 pt-2"> {medida_actual} {unit} </p>
               </div>
-              <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                {medida_actual} {unit}
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{label}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 pt-2">{label}</p>
             </div>
           </motion.div>
         ) : (
@@ -81,11 +83,17 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara trasera */}
-            <div className="flex flex-col items-center bg-gray-200 dark:bg-gray-700 p-4 rounded-lg shadow-md">
+            <div className="bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+              style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara trasera */}
-              <img src={imagen} alt={label} className="w-24 h-24 mb-2 rounded-full object-cover" />
-              <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">{modelo}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{fabricante}</p>
+
+              <div className='flex flex-col items-center justify-between w-full h-full'>
+                <div className="relative w-full h-1/2">
+                  <Image src="/planta_1.png" alt={label} layout="fill" objectFit="cover"/>
+                </div>
+                <p className="text-lg font-semibold text-gray-800 dark:text-gray-200">{modelo}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 pb-2">{fabricante}</p>
+              </div>
             </div>
           </motion.div>
         )}

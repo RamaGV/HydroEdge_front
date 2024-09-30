@@ -41,7 +41,7 @@ const CultivoCard: React.FC<CultivoCardProps> = ({
   const handleClick = () => {
     onSelect(_id);
   };
-
+  
   return (
     <div
       className={`
@@ -51,37 +51,27 @@ const CultivoCard: React.FC<CultivoCardProps> = ({
       `}
       onClick={handleClick}
     >
-      <div className="flex">
+      <div className="flex flex-row justify-between">
         {/* Imagen a la izquierda */}
-        <div className="relative w-1/3 h-40">
+        <div className="relative w-1/3">
           <Image src={imagen} alt={nombre_planta} layout="fill" objectFit="cover" />
         </div>
         
         {/* Información a la derecha */}
-        <div className="w-2/3 p-4 flex flex-row justify-between">
-          <div className='flex flex-col justify-between'>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{nombre}</h3>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{fase_actual}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Día {diaActual} de {diasTotales}
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Quedan {diasTotales - diaActual} días
-              </p>
-            </div>
+        <div className='flex flex-col justify-between w-1/3 m-2'>
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{nombre}</h3>
+          <div className='text-sm text-gray-600 dark:text-gray-400'>
+            <p>{fase_actual}</p>
+            <p>Día {diaActual} de {diasTotales}</p>
           </div>
-          <div className="border-l border-gray-400 mx-4"></div>
-
-          <div className='flex flex-col justify-between'>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{nombre_planta}</h3>
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Sabor: {sabor}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Plantas: {numero_plantas}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Producc: {rendimiento_estimado} kg</p>
-            </div>
+        </div>
+        
+        <div className='flex flex-col justify-between w-1/3 m-2'>
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{nombre_planta}</h3>
+          <div className="text-sm text-gray-600 dark:text-gray-400">
+            <p>Sabor: {sabor}</p>
+            <p>Plantas: {numero_plantas}</p>
+            <p>Prod. {rendimiento_estimado} kg</p>
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function CultivosPage() {
     
     const fetchCultivos = async () => {
       try {
-        const response = await fetch('http://192.168.1.5:5000/api/cultivos/all');
+        const response = await fetch('https://hydroedgeback-production.up.railway.app/api/cultivos/all');
         const data = await response.json();
 
         // Asignar imagen genérica si no existe
@@ -64,8 +64,7 @@ export default function CultivosPage() {
   return (
     <div className={`${isDarkMode ? 'dark' : ''}`}>
       <div className="min-h-screen p-4 pt-16 text-text bg-background dark:bg-background-dark dark:text-text-dark select-none">
-        {/* Cards en dos columnas */}
-        <main className="flex-grow px-4 py-6">
+        <main className="flex-grow px-2 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {cultivos.map((cultivo) => (
               <CultivoCard

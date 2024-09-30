@@ -22,7 +22,7 @@ export default function CultivosPage() {
     setTitle("Recetas");
     const fetchCultivos = async () => {
       try {
-        const respuesta = await fetch('http://192.168.1.5:5000/api/recetas/all');
+        const respuesta = await fetch('https://hydroedgeback-production.up.railway.app/api/recetas/all');
         const data = await respuesta.json();
         
         setRecetas(data);
