@@ -9,20 +9,20 @@ import { useHeader } from '@/contexts/HeaderContext';
 
 // Actualizar la interfaz para incluir los nuevos datos
 interface CultivosData {
-  _id: string;
-  nombre: string;               // Nombre del espacio de cultivo
-  nombre_planta: string;        // Nombre de la planta
-  fase_actual: string;
-  dia_actual: number;
-  dias_totales: number;
-  imagen: string;
-  numero_plantas: number;
-  tamaño: string;
-  sabor: string;
-  rendimiento_kg_planta: number;
-  rendimiento_estimado: number;
-  azucares: string;
-  fibra: string;
+  _id: string; 
+  nombre: string; 
+  nombre_planta: string; 
+  fase_actual: string; 
+  dia_actual: number; 
+  dias_totales: number; 
+  imagen: string; 
+  numero_plantas: number; 
+  tamaño: string; 
+  sabor: string; 
+  rendimiento_kg_planta: number; 
+  rendimiento_estimado: number; 
+  azucares: string; 
+  fibra: string; 
 }
 
 export default function CultivosPage() {
@@ -79,7 +79,7 @@ export default function CultivosPage() {
       <div className="min-h-screen p-4 pt-16 text-text
         bg-background dark:bg-background-dark dark:text-text-dark select-none">
         <main className="flex-grow px-2 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cultivos.map((cultivo) => (
               <CultivoCard
                 key={cultivo._id}

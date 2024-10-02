@@ -45,12 +45,10 @@ const CultivoCard: React.FC<CultivoCardProps> = ({
   return (
     <div
       className={`
-        bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer
-        transform transition-transform duration-200 hover:scale-105 
+        bg-white dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden 
+        transform transition-transform duration-200 hover:scale-105
         ${isSelected ? 'ring-2 ring-primary dark:ring-primary-dark' : ''}
-      `}
-      onClick={handleClick}
-    >
+      `} onClick={handleClick}>
       <div className="flex flex-row justify-between">
         {/* Imagen a la izquierda */}
         <div className="relative w-1/3">

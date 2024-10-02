@@ -7,7 +7,7 @@ import React, { createContext, useState, useContext, ReactNode } from 'react';
 const CultivoContext = createContext<{ cultivoId: string | null; setCultivoId: (id: string) => void } | undefined>(undefined);
 
 export const CultivoProvider = ({ children }: { children: ReactNode }) => {
-  const [cultivoId, setCultivoId] = useState<string | null>(null);
+  const [cultivoId, setCultivoId] = useState<string | null>('cultivo_001');
   
   return (
     <CultivoContext.Provider value={{ cultivoId, setCultivoId }}>

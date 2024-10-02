@@ -19,6 +19,7 @@ export default function Header() {
 
   const isHomePage = pathname === '/';
   const isDashboardPage = pathname === '/dashboard';
+  const isRecetaDashboard = pathname === '/recetaDashboard';
 
   if (isHomePage) {
     return (
@@ -52,6 +53,28 @@ export default function Header() {
         </div>
       </div>
     );
+  } else if (isRecetaDashboard) {
+    return (
+      <div className={`${isDarkMode ? 'dark' : 'light'}`}>
+        <div className="select-none
+                        bg-background-light text--textlight 
+                        dark:bg-background-dark dark:text-text-dark 
+                        transition-colors duration-300">
+          <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary 
+              dark:bg-primary-dark text-white dark:border-gray-700 shadow-md border-b border-gray-200 z-50">
+            <div className="flex space-x-3 items-center">
+              {showBackButton && (
+                <Link href="/recetas">
+                  <ArrowLeft className="w-6 h-6 text-white hover:text-gray-200 cursor-pointer" />
+                </Link>
+              )}
+              <h1 className="text-2xl font-bold select-none">{title}</h1>
+            </div>
+            <Bell className="w-6 h-6 text-white md:opacity-100 opacity-50" />
+          </div>
+        </div>
+      </div>
+    );
   } else {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
@@ -59,20 +82,15 @@ export default function Header() {
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
                         transition-colors duration-300">
-      <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary 
-          dark:bg-primary-dark text-white dark:border-gray-700 shadow-md border-b border-gray-200 z-50">
-        <div className="flex space-x-3 items-center">
-          {showBackButton && (
-            <Link href="/">
-              <ArrowLeft className="w-6 h-6 text-white hover:text-gray-200 cursor-pointer" />
-            </Link>
-          )}
-          <h1 className="text-2xl font-bold select-none">{title}</h1>
-        </div>
-        {isDashboardPage ? (
-          <Bell className="w-6 h-6 text-white md:opacity-100 opacity-50" />
-        ) : (
-          showOptions && (
+          <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary 
+              dark:bg-primary-dark text-white dark:border-gray-700 shadow-md border-b border-gray-200 z-50">
+            <div className="flex space-x-3 items-center">
+                <Link href="/">
+                  <ArrowLeft className="w-6 h-6 text-white hover:text-gray-200 cursor-pointer" />
+                </Link>
+              <h1 className="text-2xl font-bold select-none">{title}</h1>
+            </div>
+
             <div className="flex space-x-2 opacity-50 select-none md:opacity-100 md:space-x-3 md:space-y-0">
               <button className="px-3 py-2 bg-secondary dark:bg-secondary-dark text-white rounded-full text-sm font-medium hover:bg-secondary-dark hover:opacity-80 transition duration-200 cursor-not-allowed">
                 Agregar
@@ -81,10 +99,8 @@ export default function Header() {
                 Historial
               </button>
             </div>
-          )
-        )}
-      </div>
-      </div>
+          </div>
+        </div>
       </div>
     );
   }
