@@ -66,8 +66,9 @@ export default function CultivosPage() {
   if (isLoading) {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="min-h-screen p-4 pt-16 text-text mb-12
-        bg-background dark:bg-background-dark dark:text-text-dark select-none">
+        <div className="min-h-screen p-4 pt-16 mb-12 select-none
+        bg-background-light
+        dark:bg-background-dark dark:text-text-dark">
           <div className="text-center mt-24">Cargando...</div>
           </div>
       </div>
@@ -76,8 +77,9 @@ export default function CultivosPage() {
   
   return (
     <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-      <div className="min-h-screen p-4 pt-16 text-text
-        bg-background dark:bg-background-dark dark:text-text-dark select-none">
+      <div className="min-h-screen p-4 pt-16 select-none
+        bg-background-light
+        dark:bg-background-dark dark:text-text-dark">
         <main className="flex-grow px-2 py-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cultivos.map((cultivo) => (

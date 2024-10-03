@@ -20,14 +20,14 @@ const config: Config = {
   		},
   		colors: {
   			background: {
-				DEFAULT: '#E3E5D8',
-				dark: '#263238',  // Fondo oscuro
-				light: '#ECEFF1',
+				DEFAULT: '#F5F5F5',  // Fondo claro más suave
+				dark: '#263238',  // No cambia para el modo oscuro
+				light: '#F5F8FA',  // Fondo neutro suave
 			},
 			text: {
-				DEFAULT: '#2E3A45', // Texto en modo claro
-				dark: '#ECEFF1',  // Texto en modo oscuro
-				light: '#2E3A45',
+				DEFAULT: '#4A4A4A',  // Texto en modo claro más suave
+				dark: '#ECEFF1',  // No cambia para modo oscuro
+				light: '#4A4A4A',  // Texto en modo claro
 			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -35,8 +35,9 @@ const config: Config = {
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
+				DEFAULT: '#80C6B2',  // Verde más suave
+				dark: '#388E3C',  // No cambia en modo oscuro
+				foreground: '#FFFFFF',  // Mantener el blanco para texto sobre verde
 			},
 			primary: {
 				DEFAULT: '#00A86B',       // Verde claro
@@ -49,7 +50,7 @@ const config: Config = {
 				foreground: '#FFFFFF',    // Texto sobre color secundario
 			},
 			secondary: {
-				DEFAULT: '#E57373',       // Rojo claro
+				DEFAULT: '#0077B6',       // Rojo claro
 				dark: '#D32F2F',          // Rojo oscuro
 				foreground: '#FFFFFF',    // Texto sobre color secundario
 			},
@@ -58,9 +59,9 @@ const config: Config = {
 				foreground: '#FFFFFF',    // Texto sobre color de acento
 					},
   			accent: {
-  				DEFAULT: '#FFD166',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
+				DEFAULT: '#FFE8A1',  // Amarillo más suave
+				foreground: '#FFFFFF',  // Texto sobre el color de acento
+			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
@@ -74,8 +75,8 @@ const config: Config = {
 			error: {
 			  DEFAULT: '#EF476F',
 			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
+			border: '#E0E0E0',  // Borde más suave
+			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			chart: {
   				'1': 'hsl(var(--chart-1))',

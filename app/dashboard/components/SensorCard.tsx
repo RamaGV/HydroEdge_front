@@ -52,7 +52,8 @@ const SensorCard: React.FC<SensorProps> = ({
           >
             {/* Cara frontal */}
             <div className="flex flex-col items-center justify-between text-center
-              bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-xl"
+              bg-background-light
+              dark:bg-gray-700 p-4 rounded-lg shadow-xl"
               style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara frontal */}
               <div className='flex flex-col items-center justify-between w-full h-full'>
@@ -69,10 +70,10 @@ const SensorCard: React.FC<SensorProps> = ({
                     })}
                     circleRatio={0.75}
                   />
+                </div>
+                <p className="font-semibold text-gray-800 dark:text-gray-200"> {medida_actual} {unit} </p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 pt-2">{label}</p>
               </div>
-              <p className="font-semibold text-gray-800 dark:text-gray-200"> {medida_actual} {unit} </p>
-              <p className="text-xs text-gray-600 dark:text-gray-400 pt-2">{label}</p>
-            </div>
             </div>
           </motion.div>
         ) : (
@@ -85,7 +86,9 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara trasera */}
-            <div className="bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden"
+            <div className="rounded-lg shadow-xl overflow-hidden
+              bg-background-light
+              dark:bg-gray-700"
               style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara trasera */}
               

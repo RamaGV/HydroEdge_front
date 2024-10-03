@@ -62,7 +62,8 @@ export default function SideBar({ isSidebarOpen, toggleSidebar }: { isSidebarOpe
       {isModalOpen && <ProfileModal onClose={toggleModal} />}
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-[#4CD964] text-white transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out shadow-lg`}>
+      <div className={`fixed inset-y-0 left-0 z-50 w-64 
+        bg-[#CFF5F4] text-primary dark:text-primary-dark transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out shadow-lg`}>
         <div className="flex justify-between items-center p-4 border-b border-green-400">
           <button onClick={toggleSidebar} className="text-white hover:text-gray-200 transition-colors duration-200">
             <X className="w-6 h-6" />

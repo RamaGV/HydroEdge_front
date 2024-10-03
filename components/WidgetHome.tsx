@@ -15,13 +15,13 @@ export default function WidgetHome({ link, titulo, layout, icono, finalizado }: 
   const content = (
     <div
       className={`
-        flex flex-col items-start p-4 rounded-lg shadow-md justify-between
-        bg-white dark:bg-gray-800
-        transform transition-transform duration-200
-        w-full h-full
+        flex flex-col items-start p-4 rounded-lg shadow-md justify-between 
+        transform transition-transform duration-200 w-full h-full
+        bg-[#E7FAFA]
+        dark:bg-gray-800
         ${finalizado ? 'hover:scale-105 cursor-pointer' : 'opacity-50 cursor-not-allowed'}
       `}
-      style={{ height: '125px', width: '100%' }} // Ajusta aquí el tamaño fijo del widget
+      style={{ height: '125px', width: '100%' }}
     >
       <div className="mb-2 text-primary dark:text-primary-dark">{icono}</div>
       <div>

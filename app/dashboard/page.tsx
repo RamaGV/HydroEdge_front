@@ -130,10 +130,12 @@ const DashboardPage = () => {
   
   return (
     <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-    <div className="min-h-screen p-4 pt-16 text-text mb-12
-      bg-[#f0f0f0] dark:bg-background-dark dark:text-text-dark select-none">
+      <div className="min-h-screen p-4 pt-16 text-text mb-12 select-none
+        bg-background-light  
+        dark:bg-background-dark dark:text-text-dark">
         {/* Sección de Actuadores */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl
+          bg-[#E7FAFA]
           dark:bg-gray-800">
           <h2 className="text-xl font-semibold mb-4 text-primary">Actuadores</h2>
           <div className="grid grid-cols-3 gap-4 
@@ -173,6 +175,7 @@ const DashboardPage = () => {
         
         {/* Sección de Sensores */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl
+          bg-[#E7FAFA]
           dark:bg-gray-800">
           <h2 className="text-2xl font-semibold mb-4 text-primary">Sensores</h2>
           <div className="grid grid-cols-3 gap-4 dark:bg-gray-800">
@@ -196,6 +199,7 @@ const DashboardPage = () => {
         
         {/* Sección de Progreso del Cultivo */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl 
+          bg-[#E7FAFA]
           dark:bg-gray-800">
           <h2 className="text-2xl font-semibold mb-4 text-primary">Progreso del Cultivo</h2>
           <div className="flex justify-center">

@@ -51,6 +51,7 @@ const FaseCard = ({ fase, isSelected, onClick }: { fase: FasesData; isSelected: 
 
 const UpcomingEvents = () => {
   const [selectedFase, setSelectedFase] = useState<FasesData | null>(null); 
+  const [receta, setReceta] = useState<RecetaData | null>(null);
   const [isLoading, setIsLoading] = useState(true); 
   const { isDarkMode } = useTheme(); 
   const { setTitle } = useHeader(); 
@@ -63,6 +64,7 @@ const UpcomingEvents = () => {
         const data: RecetaData[] = await response.json();
         // cargo setReceta con utilizando el contexto de receta
         const receta = data[recetaId - 1];
+        setReceta(receta);
         if(recetaId - 1 > 0){
           setSelectedFase(receta.fases[0]);
           setTitle(receta.nombre);
@@ -85,7 +87,8 @@ const UpcomingEvents = () => {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
         <div className="min-h-screen p-4 pt-16 text-text mb-12
-        bg-background dark:bg-background-dark dark:text-text-dark select-none">
+        bg-background-light
+        dark:bg-background-dark dark:text-text-dark select-none">
           <div className="text-center mt-24">Krgndo...</div>
           </div>
       </div>
@@ -95,25 +98,25 @@ const UpcomingEvents = () => {
   return (
     <>
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="min-h-screen p-4 pt-16 text-text mb-12
-          bg-[#f0f0f0] dark:bg-background-dark dark:text-text-dark select-none">      
+        <div className="min-h-screen p-4 pt-16 mb-12 select-none
+          bg-background-light
+          dark:bg-background-dark dark:text-text-dark">      
           <div className="min-h-screen text-white p-4">
-                        
+            {/* Mostrar las fases con estilo carrusel */}
             <div className="relative mb-6 overflow-hidden">
               <button className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
                 onClick={() => scrollFases('left')}>
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <div id="fase-scroll" className="flex overflow-x-auto scrollbar-hide space-x-4 py-2">
-                {/*
-                receta.fases.map((fase, index) => (
+                {receta && receta.fases.map((fase, index) => (
                   <FaseCard
                     key={index}
                     fase={fase}
                     isSelected={fase === selectedFase}
                     onClick={() => setSelectedFase(fase)}
                   />
-                ))*/
+                ))
                 }
               </div>
               <button onClick={() => scrollFases('right')} className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
@@ -121,8 +124,10 @@ const UpcomingEvents = () => {
               </button>
             </div>
             
+            {/* Titulo de fase seleccionada */}
             <h2 className="text-xl font-semibold mb-4">{selectedFase?.nombre || 'Selecciona una fase'}</h2>
             
+            {/* Muestra sensores y actuadores vinculados a la fase */}
             <div className="space-y-4">
               {/* Mostrar los sensores */}
               {selectedFase?.sensores.map((sensor) => (
@@ -139,7 +144,7 @@ const UpcomingEvents = () => {
                 />
               ))}
 
-              {/* Mostrar los actuadores con duración */}
+              {/* Mostrar los actuadores con activación diaria */}
               {Array.isArray(selectedFase?.actuadores) && selectedFase.actuadores.filter(actuador => actuador.duracion).map((actuador) => (
                 <SensorActuadorCard
                   key={actuador.nombre}

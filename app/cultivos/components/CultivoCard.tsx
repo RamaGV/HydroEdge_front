@@ -45,8 +45,9 @@ const CultivoCard: React.FC<CultivoCardProps> = ({
   return (
     <div
       className={`
-        bg-white dark:bg-gray-700 rounded-lg shadow-xl overflow-hidden 
-        transform transition-transform duration-200 hover:scale-105
+        rounded-lg shadow-xl overflow-hidden hover:scale-105 transform transition-transform duration-200 
+        bg-[#E7FAFA]
+        dark:bg-background-dark 
         ${isSelected ? 'ring-2 ring-primary dark:ring-primary-dark' : ''}
       `} onClick={handleClick}>
       <div className="flex flex-row justify-between">
@@ -57,7 +58,9 @@ const CultivoCard: React.FC<CultivoCardProps> = ({
         
         {/* Información a la derecha */}
         <div className='flex flex-col justify-between w-1/3 m-2'>
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{nombre}</h3>
+          <h3 className="text-lg font-semibold 
+            text-gray-800 
+            dark:text-gray-200">{nombre}</h3>
           <div className='text-sm text-gray-600 dark:text-gray-400'>
             <p>{fase_actual}</p>
             <p>Día {diaActual} de {diasTotales}</p>

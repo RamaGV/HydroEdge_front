@@ -28,8 +28,13 @@ export default function Header() {
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
                         transition-colors duration-300">
-          <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-          
+
+          <div className='opacity-50 select-none cursor-not-allowed dark:opacity-100'>
+            {/*
+            <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+             */}
+          </div>
+
           <header className="fixed top-0 left-0 right-0 h-16 
             flex items-center justify-between p-4 
             bg-background-light dark:bg-background-dark shadow-md z-50">

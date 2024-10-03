@@ -37,7 +37,7 @@ export default function CultivosPage() {
   return (
     <div className={`${isDarkMode ? 'dark' : 'light'}`}>
       <div className="min-h-screen p-4 pt-16 select-none
-        bg-background text-text
+        bg-background-light
         dark:bg-background-dark">
         <main className="flex-grow px-2 mb-20">
           <div>

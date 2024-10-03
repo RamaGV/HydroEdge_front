@@ -17,8 +17,9 @@ export default function ActuadorCard({ icon, label, is_active }: ActuadorCardPro
   
   return (
     <div className="flex flex-col items-center p-4 rounded-lg 
-      shadow-xl justify-between bg-gray-100 dark:bg-gray-700 
-      hover:shadow-md transition"
+      shadow-xl justify-between hover:shadow-md transition
+      bg-background-light 
+      dark:bg-gray-700 "
       style={{ height: '180px', width: '90px' }}>
       <div className="bg-primary rounded-full p-3 mb-2 text-white shadow-md">
         {React.cloneElement(icon as React.ReactElement, { className: 'w-8 h-8' })}
