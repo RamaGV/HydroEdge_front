@@ -23,7 +23,7 @@ export default function HomePage() {
   
   return (
     <>
-      {/* Aplicamos la clase 'dark' según el contexto */}
+      {/* Contenido responsivo */}
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
         <div className="flex flex-col min-h-screen select-none
                         bg-background-light text--textlight

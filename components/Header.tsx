@@ -101,12 +101,20 @@ export default function Header() {
             </div>
 
             <div className="flex space-x-2 opacity-50 select-none md:opacity-100 md:space-x-3 md:space-y-0">
+              
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full bg-accent text-gray-900 dark:bg-gray-800 dark:text-accent transition-colors duration-200"
+            >
+              {isDarkMode ? <Sun className="w-6 h-6 text-accent" /> : <Moon className="w-6 h-6" />}
+            </button>
+            {/**
               <button className="px-3 py-2 bg-secondary dark:bg-secondary-dark text-white rounded-full text-sm font-medium hover:bg-secondary-dark hover:opacity-80 transition duration-200 cursor-not-allowed">
                 Agregar
               </button>
               <button className="px-3 py-2 bg-accent text-gray-900 rounded-full text-sm font-medium hover:bg-yellow-500 transition duration-200 cursor-not-allowed">
                 Historial
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

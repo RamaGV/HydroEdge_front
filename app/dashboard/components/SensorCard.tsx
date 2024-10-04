@@ -51,10 +51,11 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara frontal */}
-            <div className="flex flex-col items-center justify-between text-center
-              bg-background-light
-              dark:bg-gray-700 p-4 rounded-lg shadow-xl"
-              style={{ height: '180px', width: '90px' }}>
+            <div className="flex flex-col items-center p-4 rounded-lg 
+            shadow-xl justify-between hover:shadow-md transition
+            bg-gradient-to-br from-card-light to-card-light_
+            dark:bg-gradient-to-br dark:from-card-dark dark:to-card-dark_"
+            style={{ height: '180px', width: '90px' }}>
               {/* Contenido de la cara frontal */}
               <div className='flex flex-col items-center justify-between w-full h-full'>
                 <div className="relative w-full h-1/2">
@@ -72,7 +73,7 @@ const SensorCard: React.FC<SensorProps> = ({
                   />
                 </div>
                 <p className="font-semibold text-gray-800 dark:text-gray-200"> {medida_actual} {unit} </p>
-                <p className="text-xs text-gray-600 dark:text-gray-400 pt-2">{label}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 pt-2 whitespace-nowrap">{label}</p>
               </div>
             </div>
           </motion.div>
@@ -86,7 +87,7 @@ const SensorCard: React.FC<SensorProps> = ({
             transition={{ duration: 0.5 }}
           >
             {/* Cara trasera */}
-            <div className="rounded-lg shadow-xl overflow-hidden
+            <div className="rounded-lg shadow-md overflow-hidden
               bg-background-light
               dark:bg-gray-700"
               style={{ height: '180px', width: '90px' }}>
@@ -96,8 +97,8 @@ const SensorCard: React.FC<SensorProps> = ({
                 <div className="relative w-full h-1/2">
                   <Image src="/planta_1.png" alt={label} layout="fill" objectFit="cover"/>
                 </div>
-                <p className="font-semibold text-gray-800 dark:text-gray-200">{modelo}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400 pb-2">{fabricante}</p>
+                <p className="font-semibold text-gray-800 dark:text-gray-200 pb-2">{modelo}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 pb-4">{fabricante}</p>
               </div>
             </div>
           </motion.div>

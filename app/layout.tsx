@@ -19,6 +19,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
+      <div className="hidde md:block">
+        
+      </div>
+      <div className="block md:hidden">
         <ThemeProvider>
           <RecetaProvider>
             <CultivoProvider>
@@ -34,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </CultivoProvider>
           </RecetaProvider>
         </ThemeProvider>
+      </div>
       </body>
     </html>
   );

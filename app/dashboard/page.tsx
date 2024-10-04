@@ -135,9 +135,9 @@ const DashboardPage = () => {
         dark:bg-background-dark dark:text-text-dark">
         {/* Sección de Actuadores */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl
-          bg-[#E7FAFA]
+          light:bg-background-light
           dark:bg-gray-800">
-          <h2 className="text-xl font-semibold mb-4 text-primary">Actuadores</h2>
+          <h2 className="text-2xl font-semibold pl-2 mb-4 text-primary">Actuadores</h2>
           <div className="grid grid-cols-3 gap-4 
             dark:bg-gray-800">
             {actuadorData
@@ -175,9 +175,9 @@ const DashboardPage = () => {
         
         {/* Sección de Sensores */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl
-          bg-[#E7FAFA]
+          bg-background-light  
           dark:bg-gray-800">
-          <h2 className="text-2xl font-semibold mb-4 text-primary">Sensores</h2>
+          <h2 className="text-2xl font-semibold pl-2 mb-4 text-primary">Sensores</h2>
           <div className="grid grid-cols-3 gap-4 dark:bg-gray-800">
             {sensoresData
               .filter((sensor) => sensoresVisibles.includes(sensor.nombre))
@@ -199,9 +199,9 @@ const DashboardPage = () => {
         
         {/* Sección de Progreso del Cultivo */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl 
-          bg-[#E7FAFA]
+          bg-background-light  
           dark:bg-gray-800">
-          <h2 className="text-2xl font-semibold mb-4 text-primary">Progreso del Cultivo</h2>
+          <h2 className="text-2xl font-semibold pl-2 mb-4 text-primary">Progreso del Cultivo</h2>
           <div className="flex justify-center">
             <GrowthProgress daysPassed={diaActual - 1} totalDays={diasTotales} />
           </div>
