@@ -13,9 +13,8 @@ interface FaseCardProps {
 const FaseCard: React.FC<FaseCardProps> = ({ fase, isSelected, onClick }) => (
   <button
     onClick={onClick}
-    className={`flex flex-col items-center justify-center w-40 h-24 rounded-lg transition-all duration-300 p-2 ${
-      isSelected ? 'bg-white text-background scale-105' : 'bg-complementary text-white scale-100'
-    }`}
+    className={`flex flex-col items-center justify-center w-full h-24 rounded-lg bg-primary transition-all duration-300 p-2 m-2 hover:scale-105 
+      ${ isSelected ? ' text-background scale-105' : 'text-background scale-100 opacity-65' }`}
   >
     <span className="text-lg font-bold">{fase.nombre}</span>
     <span className="text-sm">{fase.duracion} días</span>

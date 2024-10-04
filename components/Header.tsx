@@ -18,13 +18,12 @@ export default function Header() {
   const pathname = usePathname();
 
   const isHomePage = pathname === '/';
-  const isDashboardPage = pathname === '/dashboard';
   const isRecetaDashboard = pathname === '/recetaDashboard';
 
   if (isHomePage) {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="select-none
+        <div className="select-none border-gray-200
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
                         transition-colors duration-300">
@@ -61,12 +60,12 @@ export default function Header() {
   } else if (isRecetaDashboard) {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="select-none
-                        bg-background-light text--textlight 
-                        dark:bg-background-dark dark:text-text-dark 
-                        transition-colors duration-300">
-          <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary 
-              dark:bg-primary-dark text-white dark:border-gray-700 shadow-md border-b border-gray-200 z-50">
+        <div className="select-none text--textlight transition-colors duration-300
+                        bg-background-light text--textlight
+                        dark:bg-background-dark dark:text-text-dark">
+          <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary shadow-md border-b z-50
+              dark:bg-background-dark text-white 
+              dark:border-gray-700">
             <div className="flex space-x-3 items-center">
               {showBackButton && (
                 <Link href="/recetas">
@@ -75,7 +74,12 @@ export default function Header() {
               )}
               <h1 className="text-2xl font-bold select-none">{title}</h1>
             </div>
-            <Bell className="w-6 h-6 text-white md:opacity-100 opacity-50" />
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full bg-accent text-gray-900 dark:bg-gray-800 dark:text-accent transition-colors duration-200"
+            >
+              {isDarkMode ? <Sun className="w-6 h-6 text-accent" /> : <Moon className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
@@ -83,17 +87,17 @@ export default function Header() {
   } else {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-        <div className="select-none
+        <div className="select-none text--textlight transition-colors duration-300
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
                         transition-colors duration-300">
           <div className="fixed top-0 left-0 right-0 h-16 flex justify-between items-center p-4 bg-primary 
-              dark:bg-primary-dark text-white dark:border-gray-700 shadow-md border-b border-gray-200 z-50">
+              dark:bg-background-dark text-white dark:border-gray-700 shadow-md border-b z-50">
             <div className="flex space-x-3 items-center">
                 <Link href="/">
                   <ArrowLeft className="w-6 h-6 text-white hover:text-gray-200 cursor-pointer" />
                 </Link>
-              <h1 className="text-2xl font-bold select-none">{title}</h1>
+              <h1 className="text-xl font-bold select-none">{title}</h1>
             </div>
 
             <div className="flex space-x-2 opacity-50 select-none md:opacity-100 md:space-x-3 md:space-y-0">

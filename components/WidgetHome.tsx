@@ -17,8 +17,8 @@ export default function WidgetHome({ link, titulo, layout, icono, finalizado }: 
       className={`
         flex flex-col items-start p-4 rounded-lg shadow-md justify-between 
         transform transition-transform duration-200 w-full h-full
-        bg-[#E7FAFA]
-        dark:bg-gray-800
+        bg-gradient-to-br from-card-light to-card-light_
+        dark:bg-gradient-to-br dark:from-card-dark dark:to-card-dark_
         ${finalizado ? 'hover:scale-105 cursor-pointer' : 'opacity-50 cursor-not-allowed'}
       `}
       style={{ height: '125px', width: '100%' }}

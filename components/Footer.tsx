@@ -6,17 +6,15 @@ import { useTheme } from '@/contexts/ThemeContext'
 import Link from 'next/link'
 
 export default function Footer() {
-  const [activeNav, setActiveNav] = useState('home')
+  const [activeNav, setActiveNav] = useState('')
   const { isDarkMode } = useTheme()
   
   return (
     <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-      <footer className="fixed bottom-0 left-0 right-0 h-16
+      <footer className="fixed bottom-0 left-0 right-0 h-16 transition-colors duration-300
                         bg-background-light text--textlight 
                         dark:bg-background-dark dark:text-text-dark 
-                        transition-colors duration-300
-                        border-t shadow-md z-50">
-
+                        border-g shadow-2xl z-50">
         <div className="flex justify-around items-center h-16">
           <NavItem icon={<Home className="w-6 h-6" />} name="" activeNav={activeNav} setActiveNav={setActiveNav} />
           <NavItem icon={<Leaf className="w-6 h-6" />} name="dashboard" activeNav={activeNav} setActiveNav={setActiveNav} />

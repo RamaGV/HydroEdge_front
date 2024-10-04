@@ -20,7 +20,7 @@ const config: Config = {
   		},
   		colors: {
   			background: {
-				DEFAULT: '#F5F5F5',  // Fondo claro más suave
+				DEFAULT: '#F5F8FA',  // Fondo claro más suave
 				dark: '#263238',  // No cambia para el modo oscuro
 				light: '#F5F8FA',  // Fondo neutro suave
 			},
@@ -30,10 +30,13 @@ const config: Config = {
 				light: '#4A4A4A',  // Texto en modo claro
 			},
   			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
+			card: {
+				light: '#CFF5F4',
+				light_: '#F5F8FA',
+				dark: '#263F38',
+				dark_: '#263F58',
+				foreground: 'hsl(var(--card-foreground))'
+			},
   			popover: {
 				DEFAULT: '#80C6B2',  // Verde más suave
 				dark: '#388E3C',  // No cambia en modo oscuro

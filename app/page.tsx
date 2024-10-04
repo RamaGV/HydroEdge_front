@@ -22,12 +22,12 @@ export default function HomePage() {
   const widgets = getWidgets(cultivoId);
   
   return (
-    <>      
+    <>
       {/* Aplicamos la clase 'dark' según el contexto */}
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
         <div className="flex flex-col min-h-screen select-none
-                        bg-background-light text--textlight 
-                        dark:bg-background-dark dark:text-text-dark 
+                        bg-background-light text--textlight
+                        dark:bg-background-dark dark:text-text-dark
                         transition-colors duration-300">
           {/* Widgets */}
           <main className="flex-grow px-4 py-4">
@@ -48,7 +48,7 @@ export default function HomePage() {
 
               {/* Widget de Tip que ocupa 2 columnas */}
               <TipWidget />
-
+              
               {/* Resto de los widgets */}
               {widgets.slice(2).map((widget, index) => (
                 <WidgetHome

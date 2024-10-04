@@ -10,8 +10,10 @@ interface SensorActuadorCardProps {
 
 function SensorActuadorCard({ nombre, umbral_min, umbral_max, hora_encendido, duracion, tipo, actuadores_vinculados }: SensorActuadorCardProps) {
   return (
-    <div className="bg-white bg-opacity-10 rounded-lg p-4">
-      <h3 className="text-lg font-semibold mb-2">{nombre}</h3>
+    <div className="bg-white bg-opacity-10 rounded-lg p-4 shadow-xl
+        bg-gradient-to-br from-[#CFF5F4] to-background-light text-gray-700
+        dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-700 dark:text-white">
+      <h3 className="text-lg font-semibold mb-4">{nombre}</h3>
       <div className="grid grid-cols-2 gap-2">
         <div>
           {/* Mostrar Umbrales si es un sensor */}
@@ -29,6 +31,7 @@ function SensorActuadorCard({ nombre, umbral_min, umbral_max, hora_encendido, du
             </p>
           )}
         </div>
+
         <div>
           {/* Mostrar Actuadores vinculados si es un sensor */}
           <p className="text-sm text-red-200">{tipo === 'sensor' ? 'Actuadores vinculados' : 'Activaciones'}</p>
@@ -38,13 +41,15 @@ function SensorActuadorCard({ nombre, umbral_min, umbral_max, hora_encendido, du
             actuadores_vinculados && actuadores_vinculados.length > 0 ? (
               <div className="flex space-x-2">
                 {actuadores_vinculados.map((actuador, index) => (
-                  <div key={index} className="bg-gray-600 text-white text-sm px-2 py-1 rounded-full">
+                  <div key={index} 
+                    className="text-white text-sm px-2 py-1 rounded-full
+                    bg-gray-600 ">
                     {actuador.nombre}
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="font-medium">Ninguno</p>
+              <p>Ninguno</p>
             )
           ) : (
             <p className="font-medium">
