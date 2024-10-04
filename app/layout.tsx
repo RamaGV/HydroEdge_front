@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} bg-[url('/fondo.webp')] bg-cover bg-center bg-no-repeat `}>
         <div className="hidden md:block">
-          <p>Hola mundo</p>
+          {children}
         </div>
         <div className="block md:hidden">
           <ThemeProvider>

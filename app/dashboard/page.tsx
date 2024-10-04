@@ -198,7 +198,7 @@ const DashboardPage = () => {
         </section>
         
         {/* Sección de Progreso del Cultivo */}
-        <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl 
+        <section className="rounded-lg p-4 mb-10 mt-6 shadow-xl 
           bg-background-light  
           dark:bg-gray-800">
           <h2 className="text-2xl font-semibold pl-2 mb-4 text-primary">Progreso del Cultivo</h2>
