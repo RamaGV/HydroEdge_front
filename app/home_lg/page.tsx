@@ -2,15 +2,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { FaPhoneAlt } from 'react-icons/fa';
+import Header_lg from '@/components/Header_lg';
 import Image from 'next/image';
-import logo from '@/public/logo.webp'; // Cambia el path a la ruta correcta de tu logo
 
 const images = [
-  '/public/lab1.jpg', // Imagen del laboratorio
-  '/public/lab2.jpg', // Otra imagen del laboratorio
-  '/public/app1.png', // Screenshot de la aplicación
-  '/public/app2.png', // Otro screenshot de la aplicación
+  '/lab1.webp', // Imagen del laboratorio
+  '/lab2.webp', // Otra imagen del laboratorio
+  '/app1.webp', // Screenshot de la aplicación
+  '/app2.webp', // Otro screenshot de la aplicación
 ];
 
 const Home_lg: React.FC = () => {
@@ -26,29 +25,10 @@ const Home_lg: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div className="min-h-screen bg-[#081C3A] text-white font-sans">
       {/* Header */}
-      <header className="flex justify-between items-center p-4">
-        <div className="flex items-center">
-          <Image src={logo} alt="Logo" width={50} height={50} />
-          <h1 className="ml-2 text-2xl font-bold">Laboix</h1>
-        </div>
-        <nav className="hidden md:flex space-x-6">
-          <a href="#" className="hover:text-green-400">Home</a>
-          <a href="#" className="hover:text-green-400">About</a>
-          <a href="#" className="hover:text-green-400">Services</a>
-          <a href="#" className="hover:text-green-400">Pages</a>
-          <a href="#" className="hover:text-green-400">Blog</a>
-          <a href="#" className="hover:text-green-400">Contact</a>
-        </nav>
-        <div className="hidden md:flex items-center space-x-4">
-          <button className="bg-white text-[#081C3A] px-4 py-2 rounded font-bold">Appointment</button>
-          <div className="flex items-center space-x-2 text-green-400">
-            <FaPhoneAlt />
-            <span>+92 3800 8060</span>
-          </div>
-        </div>
-      </header>
+      <Header_lg />
 
       {/* Sección Destacada */}
       <section className="relative flex flex-col md:flex-row items-center p-8">
@@ -69,6 +49,7 @@ const Home_lg: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

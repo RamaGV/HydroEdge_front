@@ -20,10 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[url('/fondo.webp')] bg-cover bg-center bg-no-repeat `}>
-        <div className="hidden md:block">
-          {children}
-        </div>
-        <div className="block md:hidden">
           <ThemeProvider>
             <RecetaProvider>
               <CultivoProvider>
@@ -31,9 +27,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <HeaderProvider>
                     <SidebarProvider>
                       <AccountProvider>
-                      <Header />
-                      {children}
-                      <Footer />
+                      <div className="hidden md:block">
+                        {children}
+                      </div>
+                      <div className="block md:hidden">
+                        <Header />
+                        {children}
+                        <Footer />
+                      </div>
                       </AccountProvider>
                     </SidebarProvider>
                   </HeaderProvider>
@@ -41,7 +42,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </CultivoProvider>
             </RecetaProvider>
           </ThemeProvider>
-        </div>
       </body>
     </html>
   );
