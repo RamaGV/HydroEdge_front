@@ -11,10 +11,10 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl }) => {
   return (
     <div className="bg-[#0A2540] rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-        <Image 
-            src={imageUrl} 
-            alt={title} 
-            width={500} 
+        <Image
+            src={imageUrl}
+            alt={title}
+            width={500}
             height={300}
             className="w-full h-48 object-cover" />
         <div className="p-6">

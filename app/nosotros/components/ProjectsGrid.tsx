@@ -9,13 +9,13 @@ const projects = [
     imageUrl: '/proyecto1.webp',
   },
   {
-    title: 'Tablero Digital CrossFit',
-    description: 'Un tablero digital para sesiones de CrossFit que permite monitorear y visualizar el tiempo y tipo de ejercicio en curso. Cuenta con funcionalidades de seguimiento automático para cada rutina, mostrando intervalos y registros de desempeño para mejorar el rendimiento de los atletas.',
+    title: 'Panel de Monitoreo Hidropónico',
+    description: 'Desarrollo de un dashboard para visualizar datos de sensores de una instalación hidropónica, utilizando React y comunicación en tiempo real con MQTT.',
     imageUrl: '/proyecto2.webp',
   },
   {
-    title: 'Sistema de Monitoreo de Glucosa CGM Inteligente',
-    description: 'Un sistema avanzado de monitoreo continuo de glucosa que se conecta constantemente para ofrecer datos en tiempo real. Este sistema permite a los usuarios tener un mejor control de sus niveles de glucosa, con alertas automáticas para situaciones críticas y conectividad con otros dispositivos para una gestión integral.',
+    title: 'Robot de Inspección Autónomo',
+    description: 'Robot móvil con sensores ultrasónicos para la inspección de áreas de difícil acceso, con control remoto desde una aplicación móvil.',
     imageUrl: '/proyecto3.webp',
   },
 ];
@@ -24,7 +24,7 @@ const ProjectsGrid: React.FC = () => {
   return (
     <section className="max-w-6xl mx-auto mb-16">
       <h2 className="text-4xl font-bold mb-8 text-green-500">Proyectos Finalizados</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
