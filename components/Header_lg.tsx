@@ -16,7 +16,7 @@ export default function Header_lg() {
         <nav className="hidden md:flex space-x-6">
           <Link href="/" className="hover:text-green-500 transition duration-300 ease-in-out">Inicio</Link>
           <Link href="/nosotros" className="hover:text-green-500 transition duration-300 ease-in-out">Nosotros</Link>
-          <Link href="/que-ofrecemos" className="hover:text-green-500 transition duration-300 ease-in-out">Qué ofrecemos</Link>
+          <Link href="/queOfrecemos" className="hover:text-green-500 transition duration-300 ease-in-out">Qué ofrecemos</Link>
           <Link href="/informacion" className="hover:text-green-500 transition duration-300 ease-in-out">Información</Link>
           <Link href="/blog" className="hover:text-green-500 transition duration-300 ease-in-out">Blog</Link>
           <Link href="/hablemos" className="hover:text-green-500 transition duration-300 ease-in-out">Hablemos</Link>

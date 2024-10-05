@@ -8,7 +8,7 @@ const Nosotros: React.FC = () => {
   return (
     <>
         <Header_lg />
-        <div className="min-h-screen bg-[#081C3A] text-white p-8">
+        <div className="min-h-screen bg-gradient-to-br from-[#0A2540] text-white p-8">
           <AboutSection />
           <ProjectsGrid />
         </div>

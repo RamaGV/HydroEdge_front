@@ -9,7 +9,7 @@ const Home_lg: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-[#081C3A] text-white font-sans select-none">
+      <div className="min-h-screen bg-gradient-to-br from-[#0A2540] text-white font-sans select-none">
         {/* Header */}
         <Header_lg />
         <PrimerSecc />

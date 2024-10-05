@@ -29,7 +29,7 @@ const PrimerSecc: React.FC = () => {
             {/* Fondo dividido con imagen */}
             <div className="absolute inset-0 flex">
             {/* Parte izquierda con gradiente */}
-            <div className="w-1/2 bg-gradient-to-br from-green-700 to-green-400 z-10 opacity-50 shadow-2xl"></div>
+            <div className="w-1/2 bg-gradient-to-br from-[#0A2540] to-green-400 z-10 opacity-50 shadow-2xl"></div>
         
             {/* Parte derecha con la imagen */}
             <div className="w-1/2 relative">
