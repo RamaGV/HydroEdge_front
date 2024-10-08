@@ -10,7 +10,7 @@ import { SidebarProvider } from '@/contexts/SidebarContext';
 import { RecetaProvider } from '@/contexts/RecetaContext';
 import { AccountProvider } from '@/contexts/AccountContext';
 import { Inter } from 'next/font/google';
-import Header from '@/components/Header';
+import Header from '@/components/Header_md';
 import Footer from '../components/Footer';
 import './globals.css';
 
