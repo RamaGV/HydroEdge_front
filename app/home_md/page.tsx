@@ -24,7 +24,7 @@ export default function Home_md() {
       {!isLoggin && <LoginPage />}
           {isLoggin && (
               <div className={`${isDarkMode ? 'dark' : 'light'}`}>
-                <div className="flex flex-col min-h-screen select-none
+                <div className="flex flex-col min-h-screen select-none mt-16
                                 bg-background-light text--textlight
                                 dark:bg-background-dark dark:text-text-dark
                                 transition-colors duration-300">

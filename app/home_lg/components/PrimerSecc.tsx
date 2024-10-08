@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 const images = [
@@ -39,10 +40,10 @@ const PrimerSecc: React.FC = () => {
           <p className="text-xl mb-8">
             Soluciones automatizadas para cultivos sostenibles y eficientes. Lleva tu experiencia agrícola al siguiente nivel.
           </p>
-          <a href="#"
+          <Link href="/prueba" 
             className="inline-block px-8 py-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-300 ease-in-out">
-            Comenzar Ahora
-          </a>
+            Prueba Ahora
+          </Link>
         </div>
       </div>
     </div>
