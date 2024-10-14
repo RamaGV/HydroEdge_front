@@ -1,3 +1,4 @@
+// Header_lg.tsx
 'use client'
 
 import { FaPhoneAlt } from 'react-icons/fa'
@@ -6,15 +7,15 @@ import Link from 'next/link'
 export default function Header_lg() {
   return (
     <>
-      <header className="flex justify-between items-center p-6 shadow-lg bg-[#0A2540] text-white border-b-2 border-gray-800">
+      <header className="flex justify-between items-center p-6 shadow-lg bg-[#0A2549] text-white shadow-2xl border-gray-800 border-b">
         <div className="flex text-4xl font-bold">
           <h1 className="text-green-500">Hydro</h1>
           <span className="text-gray-300">Edge</span>
         </div>
-        <nav className="hidden md:flex space-x-8 font-medium">
+        <nav className="hidden md:flex space-x-8 font-medium" aria-label="Main Navigation">
           <Link href="/" className="hover:text-green-500 transition duration-300 ease-in-out">Inicio</Link>
-          <Link href="/nosotros" className="hover:text-green-500 transition duration-300 ease-in-out">Sobre mí</Link>
-          <Link href="/queOfrecemos" className="hover:text-green-500 transition duration-300 ease-in-out">Qué ofrecemos</Link>
+          <Link href="/automatizacion" className="hover:text-green-500 transition duration-300 ease-in-out">Automatización</Link>
+          <Link href="/calibraciones" className="hover:text-green-500 transition duration-300 ease-in-out">Calibración de Sensores</Link>
           <Link href="/informacion" className="hover:text-green-500 transition duration-300 ease-in-out">Información</Link>
           <Link href="/contacto" className="hover:text-green-500 transition duration-300 ease-in-out">Contacto</Link>
         </nav>

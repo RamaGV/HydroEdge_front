@@ -1,4 +1,4 @@
-// pages/Informacion.tsx
+// app/informacion/page.tsx 
 
 import React from 'react';
 import Header_lg from '@/components/Header_lg';

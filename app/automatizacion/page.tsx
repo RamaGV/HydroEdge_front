@@ -1,21 +1,19 @@
-// home_lg.tsx
-'use client';
-
+// app/automatizacion/page.tsx
+'use client'
+import React from 'react';
 import Header_lg from '@/components/Header_lg';
-import PrimerSecc from './components/HeroSection_1';
+import AutomatizacionSection from './components/AutomatizacionSection';
 
-const Home_lg: React.FC = () => {
-
+const Automatizacion: React.FC = () => {
   return (
     <>
       <Header_lg />
       <div className="min-h-screen bg-gradient-to-br from-[#0A2540] text-white 
                       opacity-90 text-center font-sans select-none">
-        {/* Header */}
-        <PrimerSecc />
+        <AutomatizacionSection />
       </div>
     </>
   );
 };
 
-export default Home_lg;
+export default Automatizacion;

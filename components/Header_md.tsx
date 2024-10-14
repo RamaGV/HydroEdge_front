@@ -24,7 +24,7 @@ export default function Header() {
     return (
       <div className={`${isDarkMode ? 'dark' : 'light'}`}>
         <header className="select-none border-gray-200
-                        bg-background-light text--textlight 
+                        bg-background-light
                         dark:bg-background-dark dark:text-text-dark 
                         transition-colors duration-300">
 
@@ -35,8 +35,8 @@ export default function Header() {
           </div>
 
           <div className="fixed top-0 left-0 right-0 h-16 
-                             flex items-center justify-between p-4 
-                             bg-background-light dark:bg-background-dark shadow-md z-50">
+                          flex items-center justify-between p-4 shadow-md z-50
+                          bg-background-light dark:bg-background-dark ">
 
             {/* Menu Lateral */}
             <button onClick={toggleSidebar}
@@ -46,8 +46,8 @@ export default function Header() {
             
             {/* Logo */}
             <div className="flex text-3xl font-bold ">
-              <h1 className="text-primary dark:text-white ">Hydro</h1>
-              <span className="light:text-black dark:text-primary ">Edge</span>
+              <h1 className="text-primary dark:text-white duration-500 transition">Hydro</h1>
+              <span className="light:text-text-dark  dark:text-primary ">Edge</span>
             </div>
 
             {/* Switch entre modo Claro y Oscuro */}

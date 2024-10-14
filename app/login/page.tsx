@@ -25,14 +25,14 @@ export default function LoginPage() {
             placeholder="Usuario"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
-            className="bg-transparent border-b border-white/50 text-white placeholder-white/50 focus:border-white ml-4"
+            className="bg-transparent border-b border-white/50 text-white placeholder-white/50 focus:border-white ml-6"
           />
           <input
             type="email"
             placeholder="Contraseña"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-transparent border-b border-white/50 text-white placeholder-white/50 focus:border-white ml-4"
+            className="bg-transparent border-b border-white/50 text-white placeholder-white/50 focus:border-white ml-6"
           />
           <button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white rounded-full py-2" >
             Ingresar
