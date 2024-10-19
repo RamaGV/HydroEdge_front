@@ -1,4 +1,4 @@
-// app/informacion/page.tsx 
+// app/informacion/page.tsx
 
 import React from 'react';
 import Header_lg from '@/components/Header_lg';
@@ -16,4 +16,3 @@ const Informacion: React.FC = () => {
 };
 
 export default Informacion;
-

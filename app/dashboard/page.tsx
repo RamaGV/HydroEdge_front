@@ -132,7 +132,7 @@ const DashboardPage = () => {
     <div className={`${isDarkMode ? 'dark' : 'light'}`}>
       <div className="min-h-screen p-4 pt-16 text-text mb-8 select-none
         bg-background-light  
-        dark:bg-background-dark dark:text-text-dark">
+         dark:text-text-dark opacity-90">
         {/* Sección de Actuadores */}
         <section className="rounded-lg p-4 mb-6 mt-6 shadow-xl
           light:bg-background-light

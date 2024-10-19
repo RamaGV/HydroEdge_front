@@ -1,23 +1,29 @@
+// app/home_md/page.tsx
+
 'use client';
 
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 import { useCultivo } from '@/contexts/CultivoContext';
-
 import { useTheme } from '@/contexts/ThemeContext';
 import { useAccount } from '@/contexts/AccountContext';
 import WidgetHome from '@/components/WidgetHome';
 import LoginPage from '@/app/login/page';
 import { getWidgets } from '@/components/widgetsData';
 import TipWidget from '@/components/TipWidget';
-
-
+import Tour from '@/components/Tour';
+import { useState } from 'react';
 
 export default function Home_md() {
     const { isDarkMode } = useTheme();
     const { cultivoId } = useCultivo();
     const { isLoggin } = useAccount();
     const widgets = getWidgets(cultivoId);
+    const [isTourVisible, setIsTourVisible] = useState(false);
+
+    const handleStartTour = () => {
+        setIsTourVisible(true);
+    };
 
   return (
     <>
@@ -42,8 +48,10 @@ export default function Home_md() {
                       />
                     ))}
 
-                    {/* Widget de Tip que ocupa 2 columnas */}
-                    <TipWidget />
+                    {/* Widget de Tip que ocupa 2 columnas, inicia el tour al clic */}
+                    <div onClick={handleStartTour} className="cursor-pointer">
+                      <TipWidget />
+                    </div>
                     
                     {/* Resto de los widgets */}
                     {widgets.slice(2).map((widget, index) => (
@@ -80,10 +88,9 @@ export default function Home_md() {
                   </div>
                 </main>
               </div>
+              {isTourVisible && <Tour onClose={() => setIsTourVisible(false)} />}
             </div>
           )}
     </>
   )
 }
-
-    

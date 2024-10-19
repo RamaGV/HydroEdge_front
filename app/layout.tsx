@@ -9,6 +9,7 @@ import { HeaderProvider } from '@/contexts/HeaderContext';
 import { SidebarProvider } from '@/contexts/SidebarContext'; 
 import { RecetaProvider } from '@/contexts/RecetaContext';
 import { AccountProvider } from '@/contexts/AccountContext';
+import { TourProvider } from '@/contexts/TourContext';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header_md';
 import Footer from '../components/Footer';
@@ -21,26 +22,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} bg-[url('/fondo.webp')] bg-cover bg-center bg-no-repeat `}>
           <ThemeProvider>
-            <RecetaProvider>
-              <CultivoProvider>
-                <UserProvider>
-                  <HeaderProvider>
-                    <SidebarProvider>
-                      <AccountProvider>
-                      <div className="hidden md:block">
-                        {children}
-                      </div>
-                      <div className="block md:hidden">
-                        <Header />
-                        {children}
-                        <Footer />
-                      </div>
-                      </AccountProvider>
-                    </SidebarProvider>
-                  </HeaderProvider>
-                </UserProvider>
-              </CultivoProvider>
-            </RecetaProvider>
+            <TourProvider>
+              <RecetaProvider>
+                <CultivoProvider>
+                  <UserProvider>
+                    <HeaderProvider>
+                      <SidebarProvider>
+                        <AccountProvider>
+                        <div className="hidden md:block">
+                          {children}
+                        </div>
+                        <div className="block md:hidden">
+                          <Header />
+                          {children}
+                          <Footer />
+                        </div>
+                        </AccountProvider>
+                      </SidebarProvider>
+                    </HeaderProvider>
+                  </UserProvider>
+                </CultivoProvider>
+              </RecetaProvider>
+            </TourProvider>
           </ThemeProvider>
       </body>
     </html>

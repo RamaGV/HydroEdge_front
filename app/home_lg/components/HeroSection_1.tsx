@@ -76,7 +76,7 @@ const PrimerSecc: React.FC = () => {
             </motion.p>
           </AnimatePresence>
           <Link href="/prueba" 
-            className="inline-block px-8 py-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-300 ease-in-out">
+            className="inline-block px-8 py-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition duration-300 ease-in-out ">
             Probar HydroEdge
           </Link>
         </div>
